@@ -3,5 +3,8 @@
         Controle de Financas
     </x-slot>
 
-    <h1>Gerenciamento de financas</h1>
+    <div class="container">
+        <h1>Gerenciamento de financas</h1>
+    </div>
+
 </x-layout>
