@@ -6,26 +6,19 @@
     <div class="container">
         <h1>Gerenciamento de financas</h1>
 
-        <form action="{{ route('transactions.store') }}" method="post">
-            @csrf
+        <a href="{{ route('transactions.create') }}" class="btn-transaction">Criar Transacao</a>
 
-            <label for="description">Descricao</label>
-            <input type="text" name="description" id="description" required>
+        <div class="transaction-container">
+            @foreach ($transactions as $transaction)
+                <div class="transaction-each">
+                    <p>Descrição: {{ $transaction->description }}</p>
+                    <p>Valor: {{ $transaction->amount }}</p>
+                    <p>Tipo: {{ $transaction->type }}</p>
+                    <p>Categoria: {{ $transaction->category }}</p>
+                </div>
+            @endforeach
+        </div>
 
-            <label for="amount">Valor</label>
-            <input type="number" name="amount" id="amount" required>
-
-            <label for="type">Tipo</label>
-            <select name="type" id="type" required>
-                <option value="expense">Despesa</option>
-                <option value="income">Receita</option>
-            </select>
-
-            <label for="category">Categoria</label>
-            <input type="text" name="category" id="category" required>
-
-            <button type="submit">Salvar</button>
-        </form>
     </div>
 
 </x-layout>
