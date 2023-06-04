@@ -32,10 +32,13 @@ label {
 }
 
 .transaction-each {
-    background-color: #38465e;
+    background-color: #4f61a0;
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 
 }
 
@@ -47,7 +50,7 @@ label {
 
 .btn-transaction {
     display: block;
-    width: 100%;
+    width: 95%;
     padding: 10px;
     background-color: #4caf50;
     color: #fff;
@@ -56,10 +59,9 @@ label {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-
 }
 
-.btn-primary:hover {
+.btn-transaction:hover {
     background-color: #45a049;
 }
 
