@@ -82,7 +82,7 @@ label {
 .btn-delete {
     display: block;
     margin-top: 10px;
-    width: 95%;
+    width: 100%;
     padding: 10px;
     background-color: rgba(195, 22, 22, 0.94);
     color: #fff;
@@ -104,7 +104,7 @@ select {
     box-sizing: border-box;
 }
 
-button[type="submit"] {
+.btn-transaction {
     display: block;
     width: 100%;
     padding: 10px;
@@ -115,6 +115,6 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.btn-transaction:hover {
     background-color: #45a049;
 }

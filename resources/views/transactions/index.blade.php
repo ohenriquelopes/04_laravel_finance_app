@@ -16,6 +16,12 @@
                     <p>Tipo: {{ $transaction->type }}</p>
                     <p>Categoria: {{ $transaction->category }}</p>
                     <a href="{{ route('transactions.edit', $transaction->id) }}" class="btn-edit">Editar</a>
+
+                    <form action="{{ route('transactions.destroy', $transaction) }}" method="post" style="display: inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-delete">Remover</button>
+                    </form>
                 </div>
             @endforeach
         </div>

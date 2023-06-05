@@ -24,7 +24,7 @@
         <label for="category">categoria</label>
         <input type="text" name="category" id="category" value="{{ $transaction->description }}">
 
-        <button type="submit">Atualizar</button>
+        <button type="submit" class="btn-transaction">Atualizar</button>
     </form>
 
 </x-layout>

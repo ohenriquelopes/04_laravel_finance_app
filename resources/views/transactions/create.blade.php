@@ -24,7 +24,7 @@
             <label for="category">Categoria</label>
             <input type="text" name="category" id="category">
 
-            <button type="submit">Salvar</button>
+            <button type="submit" class="btn-transaction">Salvar</button>
         </form>
     </div>
 
