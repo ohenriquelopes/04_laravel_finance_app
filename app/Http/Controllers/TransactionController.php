@@ -39,4 +39,16 @@ class TransactionController extends Controller
         return view('transactions.edit', compact('transaction',));
     }
 
+    public function update(Request $request, $id)
+    {
+        $transaction = Transaction::find($id);
+        $transaction->description = $request->input('description');
+        $transaction->amount = $request->input('amount');
+        $transaction->type = $request->input('type');
+        $transaction->category = $request->input('category');
+        $transaction->save();
+
+        return redirect()->route('transactions.index')->with('success', 'Transaction updated successfully');
+    }
+
 }
