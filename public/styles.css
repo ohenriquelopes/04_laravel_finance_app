@@ -67,6 +67,21 @@ label {
 
 .btn-edit {
     display: block;
+    margin-top: 10px;
+    width: 95%;
+    padding: 10px;
+    background-color: #e8aa0d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-delete {
+    display: block;
+    margin-top: 10px;
     width: 95%;
     padding: 10px;
     background-color: rgba(195, 22, 22, 0.94);
