@@ -15,6 +15,7 @@
                     <p>Valor: {{ $transaction->amount }}</p>
                     <p>Tipo: {{ $transaction->type }}</p>
                     <p>Categoria: {{ $transaction->category }}</p>
+                    <a href="{{ route('transactions.edit', $transactions->id) }}" class="btn-edit">Editar</a>
                 </div>
             @endforeach
         </div>
