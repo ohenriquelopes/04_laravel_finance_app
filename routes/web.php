@@ -33,3 +33,7 @@ Route::put('/transactions/{transaction}', [TransactionController::class, 'update
 
 Route::delete('/transactions/{transaction}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
