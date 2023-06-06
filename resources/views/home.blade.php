@@ -1,23 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <h1>Gerenciamento de financas</h1>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <a href="{{ route('transactions.create') }}" class="btn-transaction">Criar Transacao</a>
 
-                    {{ __('You are logged in!') }}
+        <div class="transaction-container">
+            @foreach ($transactions as $transaction)
+                <div class="transaction-each">
+                    <p>Descrição: {{ $transaction->description }}</p>
+                    <p>Valor: {{ $transaction->amount }}</p>
+                    <p>Tipo: {{ $transaction->type }}</p>
+                    <p>Categoria: {{ $transaction->category }}</p>
+                    <a href="{{ route('transactions.edit', $transaction->id) }}" class="btn-edit">Editar</a>
+
+                    <form action="{{ route('transactions.destroy', $transaction) }}" method="post" style="display: inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-delete">Remover</button>
+                    </form>
                 </div>
-            </div>
+            @endforeach
         </div>
+
     </div>
+
 </div>
+
 @endsection

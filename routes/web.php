@@ -19,21 +19,32 @@ use App\Http\Controllers\TransactionController;
 
 
 
+Route::get('/', function() {
+    return view('auth.login');
+})->name('login');
 
 
-Route::get('/', [TransactionController::class, 'index']);
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
+//Route::get('/', [TransactionController::class, 'index']);
+
+
+Route::get('/home', [TransactionController::class, 'index'])->name('home');
+
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
-
-
 Route::get('/transactions/create', [TransactionController::class, 'create'])->name('transactions.create');
 Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
-
 Route::get('/transactions/{transaction}/edit', [TransactionController::class, 'edit'])->name('transactions.edit');
 Route::put('/transactions/{transaction}', [TransactionController::class, 'update'])->name('transactions.update');
-
 Route::delete('/transactions/{transaction}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
-
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

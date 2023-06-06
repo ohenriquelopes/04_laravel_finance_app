@@ -1,4 +1,5 @@
 @extends('layouts.app')
+{{--, $var_names--}}
 
 @section('content')
 <div class="container">
